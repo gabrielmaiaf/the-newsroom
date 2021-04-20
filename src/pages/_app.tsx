@@ -1,7 +1,7 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { AppProps } from "next/app";
+import Head from "next/head";
+import React from "react";
+import "tailwindcss/tailwind.css";
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,7 +11,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 
 export default CustomApp;
