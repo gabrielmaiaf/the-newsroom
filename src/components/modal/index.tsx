@@ -1,21 +1,23 @@
-import React, { ReactNode } from 'react';
+import React from "react";
+import { useModal } from "../../hooks/useModal";
+import Modal from "react-modal";
+import { RiCloseFill } from "react-icons/ri";
 
-// Components
-import ModalComponents from './index.styled';
+function ModalContainer() {
+  const { modal, content, handleCloseModal } = useModal();
 
-function Modal({ handleClose, show, children }: {
-  handleClose: () => void, show: boolean, children: ReactNode,
-}) {
   return (
-    <ModalComponents.ModalContainer style={{ display: show ? 'block' : 'none' }}>
-      <ModalComponents.ModalWrapper>
-        {children}
-        <ModalComponents.ModalClose onClick={handleClose}>
-          Close
-        </ModalComponents.ModalClose>
-      </ModalComponents.ModalWrapper>
-    </ModalComponents.ModalContainer>
+    <Modal isOpen={modal} onRequestClose={handleCloseModal}>
+      <button
+        type="button"
+        onClick={handleCloseModal}
+        className="absolute right-4"
+      >
+        <RiCloseFill />
+      </button>
+      <iframe className="h-full w-full" src={content} />
+    </Modal>
   );
 }
 
-export default Modal;
+export default ModalContainer;
