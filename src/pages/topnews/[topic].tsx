@@ -10,8 +10,8 @@ import Header from "../../components/header";
 // Types
 import { NewsType } from "../../types/news-feeder";
 
-const TopicNews: NextPage<{ rssData: NewsType[] }> = ({ rssData }) => {
-  const [rss, setRss] = useState(rssData);
+const TopicNews: NextPage = () => {
+  const [rss, setRss] = useState<NewsType[]>([]);
   const router = useRouter();
   const { topic } = router.query;
 
