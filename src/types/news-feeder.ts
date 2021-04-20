@@ -1,7 +1,7 @@
 type SourceType = {
-  id: number | null;
+  id: string | number | null;
   name: string;
-}
+};
 
 export interface NewsType {
   author: string | null;
