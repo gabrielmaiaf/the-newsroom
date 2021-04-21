@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import Link from "next/link";
-import { FaRegNewspaper } from "react-icons/fa";
+import { FaRegNewspaper, FaHackerNewsSquare } from "react-icons/fa";
 import { GiBrazil, GiItalia, GiShamrock } from "react-icons/gi";
 
 const Home: NextPage = () => (
@@ -19,15 +19,15 @@ const Home: NextPage = () => (
         <p>Select one topic to start reading:</p>
         <ul className="my-1 space-y-1">
           <li>
-            <Link href="/topnews">
+            <Link href="/trendingnews">
               <a className="flex items-center hover:opacity-70">
                 <FaRegNewspaper color="#aaa" className="mr-2" />
-                Top news
+                Trending News
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/topnews/brazil">
+            <Link href="/news/brazil">
               <a className="flex items-center hover:opacity-70">
                 <GiBrazil color="#aaa" className="mr-2" />
                 Brazil
@@ -35,7 +35,7 @@ const Home: NextPage = () => (
             </Link>
           </li>
           <li>
-            <Link href="/topnews/italy">
+            <Link href="/news/italy">
               <a className="flex items-center hover:opacity-70">
                 <GiItalia color="#aaa" className="mr-2" />
                 Italy
@@ -43,10 +43,18 @@ const Home: NextPage = () => (
             </Link>
           </li>
           <li>
-            <Link href="/topnews/ireland">
+            <Link href="/news/ireland">
               <a className="flex items-center hover:opacity-70">
                 <GiShamrock color="#aaa" className="mr-2" />
                 Ireland
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/news/programming">
+              <a className="flex items-center hover:opacity-70">
+                <FaHackerNewsSquare color="#aaa" className="mr-2" />
+                Programming (Hacker News)
               </a>
             </Link>
           </li>
@@ -55,12 +63,5 @@ const Home: NextPage = () => (
     </div>
   </>
 );
-
-// Home.getInitialProps = async () => {
-//   const response = await axios("https://rssfeederback.herokuapp.com/");
-//   let rssData = null;
-//   if (response && response.data) rssData = response.data;
-//   return { rssData };
-// };
 
 export default Home;

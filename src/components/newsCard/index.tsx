@@ -9,15 +9,33 @@ import { useModal } from "../../hooks/useModal";
 function NewsCard({ news }: { news: NewsType }) {
   const { handleOpenModal } = useModal();
 
+  const renderDescription = () => {
+    if (!news.urlToImage && !news.author) return null;
+
+    if (news.objectID) {
+      return (
+        <a href={`https://news.ycombinator.com/item?id=${news.objectID}`}>
+          Hacker News Link
+        </a>
+      );
+    }
+
+    if (news.description) return <p>{news.description}</p>;
+
+    return null;
+  };
+
   return (
     <div className="flex mx-6 space-x-2">
-      <div className="max-w-2xl w-44">
-        <img
-          className="h-48 object-cover rounded-l-xl"
-          alt={news.title}
-          src={news.urlToImage}
-        />
-      </div>
+      {news.urlToImage ? (
+        <div className="max-w-2xl w-44">
+          <img
+            className="h-48 object-cover rounded-l-xl"
+            alt={news.title}
+            src={news.urlToImage}
+          />
+        </div>
+      ) : null}
       <div className="flex flex-col justify-center w-4/5">
         <h3 className="text-xl text-blue-800 font-medium inline-flex">
           {news.title}{" "}
@@ -27,9 +45,10 @@ function NewsCard({ news }: { news: NewsType }) {
         </h3>
         {news.author ? <h4>{news.author}</h4> : null}
         <h5 className="text-blue-400 font-extralight my-2">
-          {news.source.name} - <span>{moment(news.publishedAt).fromNow()}</span>
+          {news.source && news.source.name} -{" "}
+          <span>{moment(news.publishedAt).fromNow()}</span>
         </h5>
-        <p>{news.description}</p>
+        {renderDescription()}
         <button
           type="button"
           onClick={() => handleOpenModal(news.url)}

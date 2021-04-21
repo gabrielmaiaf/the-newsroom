@@ -5,10 +5,10 @@ type SourceType = {
 
 export interface NewsType {
   author: string | null;
-  content: string;
-  description: string;
+  description?: string;
+  objectID?: number;
   publishedAt: string;
-  source: SourceType;
+  source?: SourceType;
   title: string;
   url: string;
   urlToImage: string;
