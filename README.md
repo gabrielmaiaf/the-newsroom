@@ -18,4 +18,4 @@ It uses NewsAPI, Newscatcher, ContextualWeb and HackerNews Algolia.
 
 ## Live
 
-https://the-newsroom.netlify.app
+https://the-newsroom.vercel.app
