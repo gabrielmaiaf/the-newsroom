@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import { formatDistance } from "date-fns";
 import { RiExternalLinkFill } from "react-icons/ri";
 
 // Types
@@ -45,8 +45,8 @@ function NewsCard({ news }: { news: NewsType }) {
         </h3>
         {news.author ? <h4>{news.author}</h4> : null}
         <h5 className="text-blue-400 font-extralight my-2">
-          {news.source && news.source.name} -{" "}
-          <span>{moment(news.publishedAt).fromNow()}</span>
+          {news.source && `${news.source.name} - `}
+          <span>{formatDistance(new Date(news.publishedAt), new Date())}</span>
         </h5>
         {renderDescription()}
         <button
@@ -54,7 +54,7 @@ function NewsCard({ news }: { news: NewsType }) {
           onClick={() => handleOpenModal(news.url)}
           className="w-28 mt-3 h-7 bg-blue-900 hover:bg-opacity-90 text-white rounded"
         >
-          Leia mais
+          Read more
         </button>
       </div>
     </div>

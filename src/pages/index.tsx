@@ -8,10 +8,10 @@ import { GiBrazil, GiItalia, GiShamrock } from "react-icons/gi";
 const Home: NextPage = () => (
   <>
     <Head>
-      <title>Newsroom</title>
+      <title>The_newsroom</title>
     </Head>
-    <div className="mx-36 h-screen flex justify-center flex-col">
-      <h1 className="text-4xl mb-8">Newsroom</h1>
+    <div className="md:mx-36 h-screen flex justify-center flex-col mx-8">
+      <h1 className="text-4xl mb-8">The_newsroom</h1>
       <strong className="text-xl my-3 block">
         Your place to read news everyday
       </strong>
