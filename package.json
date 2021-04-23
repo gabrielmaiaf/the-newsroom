@@ -10,7 +10,7 @@
     "export": "next export"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gabriel Maia",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
