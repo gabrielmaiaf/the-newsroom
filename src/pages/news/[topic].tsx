@@ -34,12 +34,12 @@ const TopicNews: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Newsroom - {capitalizer(topic)}</title>
+        <title>The_newsroom - {capitalizer(topic)}</title>
       </Head>
       <div>
         <Header />
         <h1 className="text-2xl my-4 mx-6">News - {capitalizer(topic)}</h1>
-        <div className="space-y-2">
+        <div className="md:space-y-2 space-y-4 mb-4">
           {rss.map((i: NewsType, index: number) => (
             <NewsCard key={index} news={i} />
           ))}

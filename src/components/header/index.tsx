@@ -7,9 +7,9 @@ import Link from "next/link";
 function Header() {
   return (
     <nav className="bg-gray-200 h-11 flex items-center">
-      <strong className="text-lg mx-4">
+      <strong className="text-lg md:mx-4 ml-4 mr-2">
         <Link href="/">
-          <a>Newsroom</a>
+          <a>The_newsroom</a>
         </Link>
       </strong>
       <ul className="flex items-center space-x-2">

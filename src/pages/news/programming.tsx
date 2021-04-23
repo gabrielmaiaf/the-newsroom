@@ -26,12 +26,12 @@ const TopNews: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Newsroom | Programming</title>
+        <title>The_newsroom | Programming</title>
       </Head>
       <div>
         <Header />
         <h1 className="text-2xl my-4 mx-6">News by Hacker News</h1>
-        <div className="space-y-2">
+        <div className="space-y-2 mb-4">
           {rss.map((i: NewsType, index: number) => (
             <NewsCard key={index} news={i} />
           ))}
